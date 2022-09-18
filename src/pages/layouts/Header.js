@@ -27,7 +27,7 @@ export default function Header() {
         <Grid container direction='row' justifyContent='space-between' alignItems='center' p={3} sx={{ position: 'static', bottom: 0, backgroundColor: 'background.paper', boxShadow: 5, display: 'flex' }}>
 
             <Grid item xs={4} sm={4} md={4} lg={4} xl={4} justifyContent='flex-start' alignItems='center' sx={{ display: 'flex' }}>
-                <Link to='/basket_stats'>
+                <Link to='/'>
                     <Box component='img' sx={{ height: 100 }} alt='logo' src={logo} />
                 </Link>
             </Grid>
