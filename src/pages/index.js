@@ -49,6 +49,7 @@ export default function HomePage() {
             localStorage.setItem('team', JSON.stringify(loadedTeam));
             setSuccessMessage('Chargement réussi')
             setMatch(loadedMatch);
+            setError(false);
         }
         catch (e) {
             setErrorMessage('Erreur lors du chargement du match')
