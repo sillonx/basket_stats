@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/basket_stats/static/js/main.5a0d14dc.js",
+    "main.js": "/basket_stats/static/js/main.eab8cac7.js",
     "static/media/logo.png": "/basket_stats/static/media/logo.82214b88d4eb227f3a52.png",
     "index.html": "/basket_stats/index.html",
-    "main.5a0d14dc.js.map": "/basket_stats/static/js/main.5a0d14dc.js.map"
+    "main.eab8cac7.js.map": "/basket_stats/static/js/main.eab8cac7.js.map"
   },
   "entrypoints": [
-    "static/js/main.5a0d14dc.js"
+    "static/js/main.eab8cac7.js"
   ]
 }
