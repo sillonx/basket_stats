@@ -5,7 +5,8 @@ const LightTheme = createTheme({
         mode: 'light',
         common: {
             black: '#000000',
-            white: '#FFFFFF'
+            white: '#FFFFFF',
+            grey: '#808080'
         },
         primary: {
             main: '#f36b1e'

@@ -22,7 +22,7 @@ export default function NewMatch() {
     const [team, setTeam] = useState([]);
     const [match] = useState(defaultMatch);
     const [open, setOpen] = useState(false);
-    const [currentId, setCurrentId] = useState(1);
+    const [currentId, setCurrentId] = useState(0);
     const addPlayer = () => {
         let tempTeam = structuredClone(team);
         let tempPlayer = structuredClone(defaultPlayer);
@@ -39,31 +39,33 @@ export default function NewMatch() {
 
     return (
         <>
-            <Grid container direction='column'>
+            <Grid container direction='column' alignItems='center' justifyContent='center' pt={5}>
                 <Grid item>
-                    <Stack direction='column'>
-                        <TextField placeholder='Locaux' required onChange={(e) => match.home = e.target.value}>{match.home}</TextField>
-                        <TextField placeholder='Visiteurs' required onChange={(e) => match.away = e.target.value}>{match.away}</TextField>
-                        <TextField placeholder='Date' type='date' required onChange={(e) => match.date = e.target.value}>{match.date}</TextField>
+                    <Stack direction='column' alignItems='center' justifyContent='center' spacing={2}>
+                        <TextField placeholder='Locaux' required onChange={(e) => match.home = e.target.value} sx={{ width: 350 }}>{match.home}</TextField>
+                        <TextField placeholder='Visiteurs' required onChange={(e) => match.away = e.target.value} sx={{ width: 350 }}>{match.away}</TextField>
+                        <TextField placeholder='Date' type='date' required onChange={(e) => match.date = e.target.value} sx={{ width: 200 }}>{match.date}</TextField>
                     </Stack>
                 </Grid>
-                <Grid item>
+                <Grid item pt={4}>
                     <Button variant='contained' size='large' onClick={addPlayer}>
                         Ajouter un joueur
                     </Button>
+                </Grid>
+                <Grid item pt={1}>
                     {team.map((index) => (
-                        <Stack direction='row'>
-                            <TextField placeholder='Nom' required onChange={(e) => index.name = e.target.value}>{index.name}</TextField>
-                            <TextField placeholder='Numéro' type='number' required onChange={(e) => index.number = e.target.value}>{index.number}</TextField>
+                        <Stack direction='row' alignItems='center' justifyContent='center' spacing={1} pb={1}>
+                            <TextField placeholder='Nom' required onChange={(e) => index.name = e.target.value} sx={{ width: 275 }}>{index.name}</TextField>
+                            <TextField placeholder='Numéro' type='number' required onChange={(e) => index.number = e.target.value} sx={{ width: 150 }}>{index.number}</TextField>
                         </Stack>
                     ))}
                 </Grid>
-                <Grid item>
-                    <Button variant='contained' size='large' disabled={team.length < 5} onClick={() => setOpen(true)}>
+                <Grid item pt={2}>
+                    <Button variant='contained' size='large' color='info' disabled={team.length < 5} onClick={() => setOpen(true)}>
                         Confirmer équipe
                     </Button>
                 </Grid>
-            </Grid>
+            </Grid >
             <Dialog open={open} onClose={() => setOpen(false)}>
                 <DialogTitle>Écraser l'ancien match</DialogTitle>
                 <DialogContent>
